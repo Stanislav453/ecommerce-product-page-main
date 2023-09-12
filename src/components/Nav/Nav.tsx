@@ -70,7 +70,7 @@ export const Nav = ({ listItemValue, setListItemValue }: navProps) => {
                 }}
                 disableRipple
               >
-                <img src={logo} alt='logo' />
+                <img src={logo} alt="logo" />
               </Button>
             </Stack>
           ) : (
@@ -85,7 +85,7 @@ export const Nav = ({ listItemValue, setListItemValue }: navProps) => {
                 }}
                 disableRipple
               >
-                <img src={logo} alt='logo' />
+                <img src={logo} alt="logo" />
               </Button>
               <Toolbar sx={{ ml: 3 }}>
                 <Tabs
@@ -101,7 +101,7 @@ export const Nav = ({ listItemValue, setListItemValue }: navProps) => {
                       key={key}
                       onClick={() => setNavKey(key)}
                       href={"#"}
-                      color='secondary'
+                      color="secondary"
                       disableRipple
                       sx={{
                         textTransform: "capitalize",
@@ -118,7 +118,7 @@ export const Nav = ({ listItemValue, setListItemValue }: navProps) => {
             </>
           )}
           <Stack
-            direction='row'
+            direction="row"
             alignItems={"center"}
             sx={{ marginLeft: "auto" }}
           >
@@ -135,7 +135,7 @@ export const Nav = ({ listItemValue, setListItemValue }: navProps) => {
             >
               <Badge
                 badgeContent={listItemValue}
-                color='info'
+                color="info"
                 sx={{
                   alignSelf: "center",
                   "& > *": {
@@ -159,7 +159,7 @@ export const Nav = ({ listItemValue, setListItemValue }: navProps) => {
                   },
                 }}
                 src={avatar}
-                alt='avatar'
+                alt="avatar"
               />
             </IconButton>
           </Stack>

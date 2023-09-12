@@ -1,11 +1,12 @@
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { IconButton, Container, Stack, Box } from "@mui/material";
 import { theme } from "../../theme";
-import CloseIcon from "@mui/icons-material/Close";
 import { GalleryMainPhoto } from "../Gallery/GalleryMainPhoto";
+import { GalleryInsight } from "../Gallery/GalleryInsight";
+import { GalleryData } from "../Gallery/GalleryData";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
-import { GalleryInsight } from "../Gallery/GalleryInsight";
+import CloseIcon from "@mui/icons-material/Close";
 
 type modalProps = {
   modalToggle: boolean;
@@ -19,6 +20,7 @@ export const ModalContainer = ({
   setModalToggle,
 }: modalProps) => {
   const [modalKey, setModalKey] = useState<number>(imageKey);
+  const galleryDataLength: number = GalleryData.length - 1;
 
   const ModalCounter = (number: number) => {
     return setModalKey((modalKey: number) => modalKey + number);
@@ -26,8 +28,8 @@ export const ModalContainer = ({
 
   useEffect(() => {
     if (modalKey < 0) {
-      setModalKey(3);
-    } else if (modalKey > 3) {
+      setModalKey(galleryDataLength);
+    } else if (modalKey > galleryDataLength) {
       setModalKey(0);
     }
   }, [modalKey]);
@@ -60,7 +62,16 @@ export const ModalContainer = ({
           onClick={() => setModalToggle(false)}
           sx={{
             marginLeft: "95%",
-            "& >*": { fontSize: "2rem", color: "primary.light" },
+            "& >*": {
+              fontSize: "2rem",
+              color: "primary.light",
+              transition: theme.transitions.create(["color"]),
+
+              "&:hover": {
+                color: "primary.main",
+                transition: theme.transitions.create(["color"]),
+              },
+            },
           }}
         >
           <CloseIcon />

@@ -18,7 +18,7 @@ export const Gallery = () => {
   const [imageKey, setImageKey] = useState<number>(0);
   const [modalToggle, setModalToggle] = useState<boolean>(false);
 
-  const galleryDataLength = GalleryData.length - 1;
+  const galleryDataLength: number = GalleryData.length - 1;
 
   useEffect(() => {
     if (imageKey > galleryDataLength) {

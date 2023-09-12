@@ -49,7 +49,7 @@ export const GalleryMainPhoto = ({
             opacity: "0",
           }}
         >
-          <img src={img_one} alt='one' />
+          <img src={img_one} alt="one" />
         </ImageListItem>
 
         {GalleryData.map((item: GalleryDataType, itemKey: number) => {
@@ -86,7 +86,7 @@ export const GalleryMainPhoto = ({
                 },
               }}
             >
-              <img src={item.src} alt={item.alt} loading='lazy' />
+              <img src={item.src} alt={item.alt} />
             </ImageListItem>
           );
         })}

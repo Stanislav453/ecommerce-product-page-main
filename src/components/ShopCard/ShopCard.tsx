@@ -29,24 +29,23 @@ export const ShopCard = ({
   toggleShopCard,
   setListItemValue,
 }: showCardProps) => {
-
-  const useMedia = useMediaQuery(theme.breakpoints.down("md"))
+  const useMedia = useMediaQuery(theme.breakpoints.down("md"));
   const inventoryResult = listItemValue * price_discount;
 
   return (
     <Box
       sx={{
         width: "100%",
-        maxWidth: useMedia ? "100%" :"320px",
+        maxWidth: useMedia ? "100%" : "320px",
         px: useMedia ? 2 : 0,
         display: "flex",
         position: "absolute",
         right: "0",
         top: useMedia ? "73px" : "90px",
-        zIndex: 10000,
+        zIndex: 101,
       }}
     >
-      <Box sx={{ width: "100%"}}>
+      <Box sx={{ width: "100%" }}>
         <Box
           sx={{
             maxHeight: toggleShopCard ? "0" : "100%",
@@ -60,7 +59,7 @@ export const ShopCard = ({
           <Box>
             <Typography
               display={"block"}
-              variant='h6'
+              variant="h6"
               sx={{
                 fontSize: "1rem",
                 fontWeight: 600,
@@ -90,7 +89,7 @@ export const ShopCard = ({
             >
               {listItemValue === 0 ? (
                 <Typography
-                  variant='body2'
+                  variant="body2"
                   sx={{
                     color: `${theme.palette.secondary.main}`,
                     fontSize: "1rem",
@@ -104,7 +103,7 @@ export const ShopCard = ({
                   <Box
                     sx={{ display: "flex", flexDirection: "row", gap: ".5rem" }}
                   >
-                    <Avatar alt='photo' src={photo} variant='rounded' />
+                    <Avatar alt="photo" src={photo} variant="rounded" />
                     <Box
                       sx={{
                         display: "flex",
@@ -115,7 +114,7 @@ export const ShopCard = ({
                     >
                       <Typography
                         lineHeight={0}
-                        variant='body2'
+                        variant="body2"
                         sx={{
                           color: `${theme.palette.secondary.main}`,
                           fontSize: ".8rem",
@@ -126,7 +125,7 @@ export const ShopCard = ({
                       </Typography>
                       <Typography
                         lineHeight={0}
-                        variant='body2'
+                        variant="body2"
                         sx={{
                           color: `${theme.palette.secondary.main}`,
                           fontSize: ".9rem",
@@ -136,7 +135,7 @@ export const ShopCard = ({
                         {`$${price_discount} x ${listItemValue}`}
                         <Typography
                           lineHeight={0}
-                          variant='caption'
+                          variant="caption"
                           sx={{
                             color: `${theme.palette.secondary.dark}`,
                             fontSize: ".9rem",
@@ -150,7 +149,7 @@ export const ShopCard = ({
                     </Box>
                     <IconButton
                       sx={{ padding: 0 }}
-                      aria-label='delete list box'
+                      aria-label="delete list box"
                       onClick={() => setListItemValue(0)}
                     >
                       <DeleteIcon sx={{ fontSize: "1.2rem" }} />

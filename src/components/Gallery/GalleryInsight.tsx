@@ -52,6 +52,16 @@ export const GalleryInsight = ({
                   minHeight: "107px",
                   cursor: "pointer",
                 },
+
+                "& > img": {
+                  opacity: 1,
+                  transition: theme.transitions.create(["opacity"]),
+                },
+
+                "& > img: hover": {
+                  opacity: 0.5,
+                  transition: theme.transitions.create(["opacity"]),
+                },
               }}
             >
               <Box
@@ -80,9 +90,8 @@ export const GalleryInsight = ({
                   backgroundColor: `${theme.palette.secondary.light}`,
                 }}
               ></Box>
-      
-                <img src={item.src} alt={item.alt} loading='lazy' />
-          
+
+              <img src={item.src} alt={item.alt} />
             </ImageListItem>
           );
         })}

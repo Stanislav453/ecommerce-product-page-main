@@ -11,6 +11,7 @@ import {
   price_discount,
   price_discount_percentage,
   price_full,
+  add_to_card,
 } from "../../Data";
 import { theme } from "../../theme";
 import { productProps } from "../Product/Product";
@@ -34,15 +35,15 @@ export const Description = ({ setListItemValue }: productProps) => {
     <Stack direction={"column"} spacing={useMedia ? 2 : 5} px={useMedia ? 2 : 0}>
       <Box>
         <Typography
-          variant='overline'
-          display='block'
+          variant="overline"
+          display="block"
           color={`${theme.palette.primary.main}`}
           sx={{ fontWeight: "600" }}
         >
           {company}
         </Typography>
         <Typography
-          variant='h1'
+          variant="h1"
           sx={{
             fontSize: "clamp(2rem, 5vw, 3rem)",
             fontWeight: "900",
@@ -53,7 +54,7 @@ export const Description = ({ setListItemValue }: productProps) => {
         </Typography>
       </Box>
       <Box>
-        <Typography variant='body2' color={`${theme.palette.secondary.main}`}>
+        <Typography variant="body2" color={`${theme.palette.secondary.main}`}>
           {description}
         </Typography>
       </Box>
@@ -64,7 +65,7 @@ export const Description = ({ setListItemValue }: productProps) => {
         gap={1}
       >
         <Box display={"flex"} gap={3} alignItems={"center"}>
-          <Typography variant='h4' sx={{ fontWeight: "900" }}>
+          <Typography variant="h4" sx={{ fontWeight: "900" }}>
             {"$"}
             {price_discount}
           </Typography>
@@ -84,7 +85,7 @@ export const Description = ({ setListItemValue }: productProps) => {
         </Box>
 
         <Typography
-          variant='h5'
+          variant="h5"
           sx={{ fontWeight: "900", textDecoration: "line-through" }}
           color={theme.palette.secondary.main}
         >
@@ -98,8 +99,8 @@ export const Description = ({ setListItemValue }: productProps) => {
         gap={useMedia ? 2 : 5}
       >
         <ButtonGroup
-          variant='string'
-          aria-label='button item counter'
+          variant="string"
+          aria-label="button item counter"
           sx={{
             display: "flex",
             backgroundColor: `${theme.palette.secondary.contrastText}`,
@@ -136,7 +137,7 @@ export const Description = ({ setListItemValue }: productProps) => {
         </ButtonGroup>
         <Button
           onClick={() => setListItemValue(buttonValue)}
-          variant='contained'
+          variant="contained"
           sx={{
             flex: 1,
             color: `${theme.palette.primary.light}`,
@@ -150,7 +151,7 @@ export const Description = ({ setListItemValue }: productProps) => {
           }}
           startIcon={<ShoppingCartIcon />}
         >
-          Add to card
+          {add_to_card}
         </Button>
       </Box>
     </Stack>
