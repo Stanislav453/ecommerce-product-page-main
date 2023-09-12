@@ -29,10 +29,14 @@ export const Description = ({ setListItemValue }: productProps) => {
     }
   }, [buttonValue]);
 
-  const useMedia = useMediaQuery(theme.breakpoints.down("md"))
+  const useMedia = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Stack direction={"column"} spacing={useMedia ? 2 : 5} px={useMedia ? 2 : 0}>
+    <Stack
+      direction={"column"}
+      spacing={useMedia ? 2 : 5}
+      px={useMedia ? 2 : 0}
+    >
       <Box>
         <Typography
           variant="overline"
@@ -99,17 +103,24 @@ export const Description = ({ setListItemValue }: productProps) => {
         gap={useMedia ? 2 : 5}
       >
         <ButtonGroup
-          variant="string"
+          variant="text"
           aria-label="button item counter"
           sx={{
             display: "flex",
             backgroundColor: `${theme.palette.secondary.contrastText}`,
             color: `${theme.palette.primary.main}`,
+            "& > *": {
+              border: "none !important",
+            },
           }}
         >
           <Button
             onClick={() => ButtonCounter(1)}
-            sx={{ padding: ".7rem 1.5rem .7rem 1.5rem", fontWeight: 900 }}
+            sx={{
+              padding: ".7rem 1.5rem .7rem 1.5rem",
+              fontWeight: 900,
+              border: "none",
+            }}
           >
             +
           </Button>
@@ -119,9 +130,12 @@ export const Description = ({ setListItemValue }: productProps) => {
               fontWeight: 900,
               backgroundColor: "transparent",
               color: "#000",
+              border: "none",
+
               "&:hover": {
                 backgroundColor: "transparent",
                 cursor: "context-menu",
+                borderColor: "transparent",
               },
             }}
             disableRipple
@@ -130,7 +144,11 @@ export const Description = ({ setListItemValue }: productProps) => {
           </Button>
           <Button
             onClick={() => ButtonCounter(-1)}
-            sx={{ padding: "1.2rem 2rem 1.2rem 2rem", fontWeight: 900 }}
+            sx={{
+              padding: "1.2rem 2rem 1.2rem 2rem",
+              fontWeight: 900,
+              border: "none",
+            }}
           >
             -
           </Button>
@@ -144,6 +162,7 @@ export const Description = ({ setListItemValue }: productProps) => {
             padding: "1.2rem 2rem 1.2rem 2rem",
             textTransform: "none",
             fontWeight: 600,
+            border: "none",
             "&:hover": {
               backgroundColor: theme.palette.primary.dark,
               boxShadow: `0px 5px 20px ${theme.palette.primary.dark}`,
